@@ -246,7 +246,7 @@ def export_upfiles(tf):
             for filename in os.listdir(folder):
                 path = os.path.join(folder, filename)
                 if os.path.isfile(path):  ## skip . & ..
-                    do(path, arcname='/upfiles/' + filename)
+                    tf.write(path, arcname='/upfiles/' + filename)
         else:  ## tarfile is automatically recursive
             tf.add(folder, arcname='/upfiles')
 
